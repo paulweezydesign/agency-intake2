@@ -1,0 +1,12 @@
+{
+  "date": "2026-09-30",
+  "tests": {
+    "passed": 30,
+    "failed": 0,
+    "skipped": 0
+  },
+  "typecheck": "passed",
+  "npmAuditKnownVulnerabilities": 0,
+  "environment": "local MongoDB and simulated OpenAI-compatible endpoint",
+  "liveResearchTrial": "not run; credentials remain on operator computer"
+}

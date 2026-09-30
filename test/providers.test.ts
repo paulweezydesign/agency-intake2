@@ -58,3 +58,10 @@ test('empty planner responses report safe generation metadata after one retry', 
   }, 'Create a plan.'), /finishReason=length, outputTokens=4096, reasoningTokens=3900/);
   assert.equal(calls, 2);
 });
+
+test('Flash is inherited by Research and memory unless explicitly overridden', () => {
+ const config = providerConfig({ LLM_PROVIDER: 'nim', NVIDIA_API_KEY: 'test-key', PM_MODEL: 'z-ai/glm-5.3-flash', OUTPUT_MODE: 'prompt' });
+ assert.equal(config.researchModel.modelId, 'z-ai/glm-5.3-flash');
+ assert.equal(config.memoryModel.modelId, 'z-ai/glm-5.3-flash');
+ assert.throws(() => providerConfig({ LLM_PROVIDER: 'constructor' }), /LLM_PROVIDER/);
+});

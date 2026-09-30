@@ -1,5 +1,19 @@
 # Validation record
 
+## Research worker branch — 2026-09-30
+
+- Clean `npm ci --ignore-scripts` succeeded against the existing lockfile; no dependency changes.
+- `npm run typecheck`: pass.
+- `npm test`: 30 passed, 0 failed, 0 skipped.
+- `npm audit --json`: 0 known vulnerabilities.
+- `git diff --check`: pass.
+- Review covered approval/tenant boundaries, assignment integrity, immutable evidence and QA decisions, stale-worker fencing, bounded provider calls, and source provenance.
+- Real MongoDB and the real Mastra adapter were exercised locally with deterministic runners/protocol responses. Conversation restart tests verify saved messages, not observational-memory compression.
+- Live GLM Research execution remains unverified here because provider credentials are configured on the operator computer. The operator previously reported a successful Flash plan and persisted approval.
+- Operational limits and exact commands are documented in RESEARCH.md.
+
+The sections below preserve historical prototype results.
+
 ## Version 0.2.0 — September 27, 2026
 
 Environment: Linux, Node.js 24.19.0, MongoDB 8.2.6. Installed from the pinned lockfile with dependency lifecycle scripts disabled. No new dependencies or dependency upgrades were introduced.

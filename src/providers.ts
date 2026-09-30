@@ -11,7 +11,7 @@ export function providerConfig(env: NodeJS.ProcessEnv = process.env): ProviderCo
     openai: { url: 'https://api.openai.com/v1', key: 'OPENAI_API_KEY' },
   };
   const selected = providers[name];
-  if (!selected) throw new Error('LLM_PROVIDER must be nim, huggingface, or openai');
+  if (!Object.hasOwn(providers, name)) throw new Error('LLM_PROVIDER must be nim, huggingface, or openai');
   const apiKey = env[selected.key]?.trim();
   if (!apiKey) throw new Error(`Set ${selected.key} in your local .env file`);
   const model = env.PM_MODEL?.trim();

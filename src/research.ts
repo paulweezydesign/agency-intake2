@@ -32,6 +32,12 @@ export class ResearchService {
     if (digest(plan) !== record.planHash) throw new Error('Approved plan integrity failure');
     const task = record.assignments.find(a => a.id === assignmentId);
     if (!task || task.role !== 'research') throw new Error('An approved Research assignment is required');
+    const index = record.assignments.findIndex(a => a.id === assignmentId);
+    const approvedTask = plan.tasks[index];
+    if (!approvedTask || task.id !== digest([actor.tenantId, runId, record.planHash, index]) ||
+      digest({ role: task.role, objective: task.objective, acceptance: task.acceptance }) !== digest(approvedTask)) {
+      throw new Error('Approved assignment integrity failure');
+    }
     const packet = packetSchema.parse(evidence);
     const sourceHash = digest(packet);
     // Replays share a durable job. The source packet is immutable for that assignment.

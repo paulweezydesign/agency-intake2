@@ -1,7 +1,7 @@
 import { z } from 'zod';
 export const hashSchema = z.string().regex(/^[a-f0-9]{64}$/);
 const sourceSchema = z.object({ id: z.string().regex(/^[a-z0-9_-]{1,40}$/),
-  title: z.string().trim().min(3).max(200), url: z.url().refine(v => v.startsWith('https://'), 'HTTPS source URL required'),
+  title: z.string().trim().min(3).max(200), url: z.url().refine(v => v.startsWith('https://'), 'HTTPS source URL required').optional(),
   retrievedAt: z.iso.datetime(), text: z.string().trim().min(20).max(16_000) }).strict();
 export const packetSchema = z.object({ sources: z.array(sourceSchema).min(1).max(8) }).strict()
   .refine(p => new Set(p.sources.map(s => s.id)).size === p.sources.length, 'Unique source IDs required')
