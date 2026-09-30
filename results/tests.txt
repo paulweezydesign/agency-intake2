@@ -1,0 +1,61 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> agency-intake@0.1.0 test
+> node --import tsx --test test/*.test.ts
+
+✔ persists approval pause, restores in a new app, dispatches once (675.866451ms)
+✔ denies cross-tenant reads and approvals, and unauthorized reviewers (319.267484ms)
+✔ rejects stale approvals and makes rejection terminal (379.746571ms)
+[WORKFLOW] Error executing step workflow.agency-intake.step.draft-plan: ZodError: [
+  {
+    "origin": "string",
+    "code": "too_small",
+    "minimum": 20,
+    "inclusive": true,
+    "path": [
+      "scope"
+    ],
+    "message": "Too small: expected string to have >=20 characters"
+  },
+  {
+    "expected": "array",
+    "code": "invalid_type",
+    "path": [
+      "unknowns"
+    ],
+    "message": "Invalid input: expected array, received undefined"
+  },
+  {
+    "origin": "array",
+    "code": "too_small",
+    "minimum": 1,
+    "inclusive": true,
+    "path": [
+      "tasks"
+    ],
+    "message": "Too small: expected array to have >=1 items"
+  }
+]
+    at Object.execute (/workspace/scratch/1d2276909721/agency-intake/src/workflow.ts:11:67)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async engine.executeStepWithRetry.retries.retries (/workspace/scratch/1d2276909721/agency-intake/node_modules/@mastra/core/dist/agent-BOxKOk3n.js:3066:18)
+    at async DefaultExecutionEngine.executeStepWithRetry (/workspace/scratch/1d2276909721/agency-intake/node_modules/@mastra/core/dist/agent-BOxKOk3n.js:3561:14)
+    at async executeStep (/workspace/scratch/1d2276909721/agency-intake/node_modules/@mastra/core/dist/agent-BOxKOk3n.js:3051:26)
+    at async executeEntry (/workspace/scratch/1d2276909721/agency-intake/node_modules/@mastra/core/dist/agent-BOxKOk3n.js:2050:50)
+    at async DefaultExecutionEngine.execute (/workspace/scratch/1d2276909721/agency-intake/node_modules/@mastra/core/dist/agent-BOxKOk3n.js:3852:17)
+    at async Run._start (/workspace/scratch/1d2276909721/agency-intake/node_modules/@mastra/core/dist/agent-BOxKOk3n.js:6381:18)
+    at async Object.start (/workspace/scratch/1d2276909721/agency-intake/src/app.ts:25:24)
+    at async waitForActual (node:assert:646:5)
+✔ strict input and model output cannot inject tenancy or assignments (449.450295ms)
+✔ concurrent duplicate approvals never duplicate assignments (376.209039ms)
+✔ refuses MongoDB query objects supplied as run IDs (366.491819ms)
+✔ recovers when the process dies after dispatch but before workflow completion (421.741545ms)
+✔ memory identifiers separate tenants and runs (0.770843ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 5685.991266

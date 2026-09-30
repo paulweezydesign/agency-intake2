@@ -1,0 +1,305 @@
+{
+  "date": "2026-09-30T09:38:28.400Z",
+  "node": "v24.21.0",
+  "mongo": "8.2.6",
+  "modelCalls": 0,
+  "scope": "Local fixture comparison: draft, approval, fake project creation, duplicate approval and delivery. Excludes connection setup; first operation initialization is included. No live model, OM quality, or production throughput measurement.",
+  "summary": [
+    {
+      "mode": "baseline",
+      "runs": 20,
+      "medianMs": 18.483099999999467,
+      "p95Ms": 50.009399999999005,
+      "duplicateProjects": 0
+    },
+    {
+      "mode": "mastra",
+      "runs": 20,
+      "medianMs": 32.404099999999744,
+      "p95Ms": 2113.7854000000007,
+      "duplicateProjects": 0
+    }
+  ],
+  "samples": [
+    {
+      "mode": "baseline",
+      "fixture": "restaurant",
+      "repeat": 0,
+      "elapsedMs": 85.83269999999902,
+      "assignments": 4
+    },
+    {
+      "mode": "baseline",
+      "fixture": "portfolio",
+      "repeat": 0,
+      "elapsedMs": 21.625099999999293,
+      "assignments": 4
+    },
+    {
+      "mode": "baseline",
+      "fixture": "saas-launch",
+      "repeat": 0,
+      "elapsedMs": 22.229300000000876,
+      "assignments": 4
+    },
+    {
+      "mode": "baseline",
+      "fixture": "shop-redesign",
+      "repeat": 0,
+      "elapsedMs": 20.50799999999981,
+      "assignments": 4
+    },
+    {
+      "mode": "baseline",
+      "fixture": "nonprofit",
+      "repeat": 0,
+      "elapsedMs": 24.891499999999724,
+      "assignments": 4
+    },
+    {
+      "mode": "baseline",
+      "fixture": "b2b-leads",
+      "repeat": 0,
+      "elapsedMs": 18.949000000000524,
+      "assignments": 4
+    },
+    {
+      "mode": "baseline",
+      "fixture": "docs-portal",
+      "repeat": 0,
+      "elapsedMs": 18.483099999999467,
+      "assignments": 4
+    },
+    {
+      "mode": "baseline",
+      "fixture": "rebrand",
+      "repeat": 0,
+      "elapsedMs": 19.16150000000016,
+      "assignments": 4
+    },
+    {
+      "mode": "baseline",
+      "fixture": "booking",
+      "repeat": 0,
+      "elapsedMs": 18.767900000000736,
+      "assignments": 4
+    },
+    {
+      "mode": "baseline",
+      "fixture": "accessibility",
+      "repeat": 0,
+      "elapsedMs": 17.211099999998623,
+      "assignments": 4
+    },
+    {
+      "mode": "mastra",
+      "fixture": "restaurant",
+      "repeat": 0,
+      "elapsedMs": 2293.9768999999997,
+      "assignments": 4
+    },
+    {
+      "mode": "mastra",
+      "fixture": "portfolio",
+      "repeat": 0,
+      "elapsedMs": 41.00409999999829,
+      "assignments": 4
+    },
+    {
+      "mode": "mastra",
+      "fixture": "saas-launch",
+      "repeat": 0,
+      "elapsedMs": 40.79269999999997,
+      "assignments": 4
+    },
+    {
+      "mode": "mastra",
+      "fixture": "shop-redesign",
+      "repeat": 0,
+      "elapsedMs": 35.70040000000154,
+      "assignments": 4
+    },
+    {
+      "mode": "mastra",
+      "fixture": "nonprofit",
+      "repeat": 0,
+      "elapsedMs": 33.24859999999899,
+      "assignments": 4
+    },
+    {
+      "mode": "mastra",
+      "fixture": "b2b-leads",
+      "repeat": 0,
+      "elapsedMs": 32.972099999999045,
+      "assignments": 4
+    },
+    {
+      "mode": "mastra",
+      "fixture": "docs-portal",
+      "repeat": 0,
+      "elapsedMs": 32.404099999999744,
+      "assignments": 4
+    },
+    {
+      "mode": "mastra",
+      "fixture": "rebrand",
+      "repeat": 0,
+      "elapsedMs": 32.91320000000087,
+      "assignments": 4
+    },
+    {
+      "mode": "mastra",
+      "fixture": "booking",
+      "repeat": 0,
+      "elapsedMs": 32.05500000000029,
+      "assignments": 4
+    },
+    {
+      "mode": "mastra",
+      "fixture": "accessibility",
+      "repeat": 0,
+      "elapsedMs": 30.66109999999935,
+      "assignments": 4
+    },
+    {
+      "mode": "mastra",
+      "fixture": "restaurant",
+      "repeat": 1,
+      "elapsedMs": 2113.7854000000007,
+      "assignments": 4
+    },
+    {
+      "mode": "mastra",
+      "fixture": "portfolio",
+      "repeat": 1,
+      "elapsedMs": 31.203700000001845,
+      "assignments": 4
+    },
+    {
+      "mode": "mastra",
+      "fixture": "saas-launch",
+      "repeat": 1,
+      "elapsedMs": 30.5428000000029,
+      "assignments": 4
+    },
+    {
+      "mode": "mastra",
+      "fixture": "shop-redesign",
+      "repeat": 1,
+      "elapsedMs": 29.536700000000565,
+      "assignments": 4
+    },
+    {
+      "mode": "mastra",
+      "fixture": "nonprofit",
+      "repeat": 1,
+      "elapsedMs": 29.654899999997724,
+      "assignments": 4
+    },
+    {
+      "mode": "mastra",
+      "fixture": "b2b-leads",
+      "repeat": 1,
+      "elapsedMs": 34.88669999999911,
+      "assignments": 4
+    },
+    {
+      "mode": "mastra",
+      "fixture": "docs-portal",
+      "repeat": 1,
+      "elapsedMs": 27.994700000002922,
+      "assignments": 4
+    },
+    {
+      "mode": "mastra",
+      "fixture": "rebrand",
+      "repeat": 1,
+      "elapsedMs": 27.06340000000273,
+      "assignments": 4
+    },
+    {
+      "mode": "mastra",
+      "fixture": "booking",
+      "repeat": 1,
+      "elapsedMs": 26.131100000002334,
+      "assignments": 4
+    },
+    {
+      "mode": "mastra",
+      "fixture": "accessibility",
+      "repeat": 1,
+      "elapsedMs": 25.567699999999604,
+      "assignments": 4
+    },
+    {
+      "mode": "baseline",
+      "fixture": "restaurant",
+      "repeat": 1,
+      "elapsedMs": 50.009399999999005,
+      "assignments": 4
+    },
+    {
+      "mode": "baseline",
+      "fixture": "portfolio",
+      "repeat": 1,
+      "elapsedMs": 12.223699999998644,
+      "assignments": 4
+    },
+    {
+      "mode": "baseline",
+      "fixture": "saas-launch",
+      "repeat": 1,
+      "elapsedMs": 12.420099999999366,
+      "assignments": 4
+    },
+    {
+      "mode": "baseline",
+      "fixture": "shop-redesign",
+      "repeat": 1,
+      "elapsedMs": 16.04070000000138,
+      "assignments": 4
+    },
+    {
+      "mode": "baseline",
+      "fixture": "nonprofit",
+      "repeat": 1,
+      "elapsedMs": 16.23460000000341,
+      "assignments": 4
+    },
+    {
+      "mode": "baseline",
+      "fixture": "b2b-leads",
+      "repeat": 1,
+      "elapsedMs": 15.494300000002113,
+      "assignments": 4
+    },
+    {
+      "mode": "baseline",
+      "fixture": "docs-portal",
+      "repeat": 1,
+      "elapsedMs": 16.425100000000384,
+      "assignments": 4
+    },
+    {
+      "mode": "baseline",
+      "fixture": "rebrand",
+      "repeat": 1,
+      "elapsedMs": 15.535899999998946,
+      "assignments": 4
+    },
+    {
+      "mode": "baseline",
+      "fixture": "booking",
+      "repeat": 1,
+      "elapsedMs": 14.889899999998306,
+      "assignments": 4
+    },
+    {
+      "mode": "baseline",
+      "fixture": "accessibility",
+      "repeat": 1,
+      "elapsedMs": 15.122400000000198,
+      "assignments": 4
+    }
+  ]
+}

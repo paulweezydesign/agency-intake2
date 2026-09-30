@@ -1,0 +1,69 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> agency-intake@0.2.0 test
+> node --import tsx --test test/*.test.ts
+
+✔ baseline: approval gates external delivery; recovery and duplicates preserve one project (209.714662ms)
+✔ baseline: rejected proposal is terminal and creates no delivery intent (22.338875ms)
+✔ mastra: approval gates external delivery; recovery and duplicates preserve one project (427.65505ms)
+✔ mastra: rejected proposal is terminal and creates no delivery intent (269.260652ms)
+✔ destination rejects key reuse with changed proposal and separates tenants (7.722712ms)
+✔ delivery refuses a mismatched destination receipt and leaves intent pending (18.475717ms)
+✔ separate intakes for the same project reuse creation; changed scope conflicts (54.069282ms)
+✔ baseline rejects untrusted input and races opposing decisions atomically (16.820809ms)
+✔ persists approval pause, restores in a new app, dispatches once (489.945594ms)
+✔ denies cross-tenant reads and approvals, and unauthorized reviewers (207.192261ms)
+✔ rejects stale approvals and makes rejection terminal (273.138833ms)
+[WORKFLOW] Error executing step workflow.agency-intake.step.draft-plan: ZodError: [
+  {
+    "origin": "string",
+    "code": "too_small",
+    "minimum": 20,
+    "inclusive": true,
+    "path": [
+      "scope"
+    ],
+    "message": "Too small: expected string to have >=20 characters"
+  },
+  {
+    "expected": "array",
+    "code": "invalid_type",
+    "path": [
+      "unknowns"
+    ],
+    "message": "Invalid input: expected array, received undefined"
+  },
+  {
+    "origin": "array",
+    "code": "too_small",
+    "minimum": 1,
+    "inclusive": true,
+    "path": [
+      "tasks"
+    ],
+    "message": "Too small: expected array to have >=1 items"
+  }
+]
+    at Object.execute (/workspace/scratch/edd774c2adc7/agency-intake/src/workflow.ts:11:67)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async engine.executeStepWithRetry.retries.retries (/workspace/scratch/edd774c2adc7/agency-intake/node_modules/@mastra/core/dist/agent-BOxKOk3n.js:3066:18)
+    at async DefaultExecutionEngine.executeStepWithRetry (/workspace/scratch/edd774c2adc7/agency-intake/node_modules/@mastra/core/dist/agent-BOxKOk3n.js:3561:14)
+    at async executeStep (/workspace/scratch/edd774c2adc7/agency-intake/node_modules/@mastra/core/dist/agent-BOxKOk3n.js:3051:26)
+    at async executeEntry (/workspace/scratch/edd774c2adc7/agency-intake/node_modules/@mastra/core/dist/agent-BOxKOk3n.js:2050:50)
+    at async DefaultExecutionEngine.execute (/workspace/scratch/edd774c2adc7/agency-intake/node_modules/@mastra/core/dist/agent-BOxKOk3n.js:3852:17)
+    at async Run._start (/workspace/scratch/edd774c2adc7/agency-intake/node_modules/@mastra/core/dist/agent-BOxKOk3n.js:6381:18)
+    at async Object.start (/workspace/scratch/edd774c2adc7/agency-intake/src/app.ts:25:24)
+    at async waitForActual (node:assert:646:5)
+✔ strict input and model output cannot inject tenancy or assignments (279.838714ms)
+✔ concurrent duplicate approvals never duplicate assignments (202.231151ms)
+✔ refuses MongoDB query objects supplied as run IDs (160.384318ms)
+✔ recovers when the process dies after dispatch but before workflow completion (217.646376ms)
+✔ memory identifiers separate tenants and runs (0.699671ms)
+ℹ tests 16
+ℹ suites 0
+ℹ pass 16
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 4000.811217

@@ -1,0 +1,39 @@
+{
+  "name": "agency-intake",
+  "version": "0.2.0",
+  "description": "Mastra and MongoDB intake prototype with durable approval",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "node --import tsx --test test/*.test.ts",
+    "typecheck": "tsc --noEmit",
+    "demo": "node --import tsx scripts/demo.ts",
+    "cli": "node --env-file-if-exists=.env --import tsx src/cli.ts",
+    "benchmark": "node --import tsx scripts/benchmark.ts",
+    "recovery-demo": "node --import tsx scripts/recovery-demo.ts",
+    "compare": "node --import tsx scripts/compare.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "@mastra/core": "1.71.0",
+    "@mastra/memory": "1.32.1",
+    "@mastra/mongodb": "1.19.0",
+    "mongodb": "7.6.0",
+    "zod": "4.6.5"
+  },
+  "devDependencies": {
+    "@types/node": "26.6.2",
+    "mongodb-memory-server": "11.3.0",
+    "tsx": "4.23.15",
+    "typescript": "7.0.2"
+  },
+  "private": true,
+  "engines": {
+    "node": ">=22.13"
+  },
+  "packageManager": "npm@11.9.0"
+}

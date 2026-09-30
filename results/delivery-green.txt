@@ -1,0 +1,14 @@
+✔ baseline: approval gates external delivery; recovery and duplicates preserve one project (197.989798ms)
+✔ baseline: rejected proposal is terminal and creates no delivery intent (14.04366ms)
+✔ mastra: approval gates external delivery; recovery and duplicates preserve one project (351.296743ms)
+✔ mastra: rejected proposal is terminal and creates no delivery intent (176.583881ms)
+✔ destination rejects key reuse with changed proposal and separates tenants (6.490348ms)
+✔ delivery refuses a mismatched destination receipt and leaves intent pending (12.526997ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2728.081036

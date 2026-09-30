@@ -1,0 +1,3 @@
+baseline: SIGKILL after destination commit; fresh worker recovered the same project; duplicate delivery created 0 extras.
+mastra: SIGKILL after destination commit; fresh worker recovered the same project; duplicate delivery created 0 extras.
+PASS: 2/2 recovery paths. Real MongoDB and child processes; fake destination; no model calls.
