@@ -1,5 +1,20 @@
 # Changelog
 
+## Unreleased — Research worker
+
+### Added
+- Explicit CLI commands to export intake evidence, execute one approved Research assignment, inspect its cited report, and record hash-bound human review.
+- Protocol and MongoDB integration tests for model output, restart persistence, replay, stale workers, and tampered assignments.
+
+### Fixed
+- Invalid observational-memory reflection configuration in the draft.
+- Research execution now verifies assignment content against the approved plan.
+- Hosted-provider selection rejects inherited object properties.
+
+### Changed
+- Example memory and Research models now match the working GLM-5.3 Flash planner. Existing local .env files are not overwritten.
+- Research sources may omit a URL for private client evidence.
+
 ## 0.2.0 — 2026-09-27
 
 ### Added

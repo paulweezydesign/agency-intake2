@@ -1,5 +1,7 @@
 # Agency Intake Prototype — v0.2.0
 
+Research worker update: see [RESEARCH.md](RESEARCH.md) for the new approved Research execution and human-review commands. Keep your working GLM-5.3 Flash configuration.
+
 A working TypeScript prototype of **client intake → Project Manager plan → human approval → queued specialist assignments**, built with Mastra and MongoDB.
 
 Version 0.2 adds a plain application state-machine baseline, a durable project-creation intent, a persistent fake project destination, and a process-kill recovery demonstration. Both orchestration paths share the same approval and delivery contracts.

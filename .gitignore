@@ -4,3 +4,8 @@ node_modules/
 dist/
 *.log
 .cache/
+
+# Local client evidence and review artifacts
+research-packet*.json
+research-review*.json
+research-result*.json

@@ -1,4 +1,5 @@
 import { Agent } from '@mastra/core/agent';
+import { noopLogger } from '@mastra/core/logger';
 import type { MastraModelConfig } from '@mastra/core/llm';
 import { Memory } from '@mastra/memory';
 import { MongoDBStore } from '@mastra/mongodb';
@@ -25,7 +26,7 @@ export function createModelSession(config: SessionConfig) {
   const memory = new Memory({ storage, options: { observationalMemory: {
     model: config.memoryModel, scope: 'thread',
     observation: { bufferTokens: false, modelSettings: { maxOutputTokens: 4096, maxRetries: 0 } },
-    reflection: { bufferActivation: false, modelSettings: { maxOutputTokens: 4096, maxRetries: 0 } },
+    reflection: { modelSettings: { maxOutputTokens: 4096, maxRetries: 0 } },
     hooks: {
       onObservationStart: () => { observationStarted = Date.now(); },
       onObservationEnd: r => report('observation', observationStarted, !r.error, r.usage),
@@ -34,8 +35,12 @@ export function createModelSession(config: SessionConfig) {
     },
   } } });
   const agent = new Agent({ id: config.role, name: config.role, instructions: config.instructions, model: config.model, memory });
+  // Emit bounded metrics instead of SDK errors containing request bodies.
+  agent.__setLogger(noopLogger);
+  const providerOptions = typeof config.model === 'object' && 'providerId' in config.model && config.model.providerId === 'agency-nim'
+    ? { 'agency-nim': { reasoningEffort: 'low' as const } } : undefined;
   const options = (ids: MemoryIds) => ({ memory: ids, maxSteps: 1,
-    modelSettings: { maxRetries: 0, maxOutputTokens: 4096 }, abortSignal: AbortSignal.timeout(60_000) });
+    modelSettings: { maxRetries: 0, maxOutputTokens: 4096 }, abortSignal: AbortSignal.timeout(60_000), providerOptions });
   return {
     async structured<T>(prompt: string, schema: z.ZodType<T>, ids: MemoryIds): Promise<T> {
       const start = Date.now();

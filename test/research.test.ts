@@ -79,3 +79,31 @@ test('concurrent executions do not publish competing artifacts', async () => {
   assert.equal(calls, 1);
   assert.equal((await service.get(actor, run.assignments[0].id)).status, 'awaiting_qa');
 });
+
+test('tampered assignment cannot change the approved research task', async () => {
+  const { run, service } = await setup('research-integrity');
+  await client.db('research-integrity').collection('agency_intakes').updateOne({ _id: run.runId } as never,
+    { $set: { 'assignments.0.objective': 'Different unapproved research work.' } });
+  await assert.rejects(service.execute(actor, run.runId, run.assignments[0].id, packet, async () => output), /integrity/i);
+});
+
+test('expired attempt is fenced when a replacement publishes, and QA cannot be reversed', async () => {
+  const { run, service } = await setup('research-fencing');
+  const id = run.assignments[0].id;
+  let started!: () => void;
+  let finish!: (value: typeof output) => void;
+  const entered = new Promise<void>(resolve => { started = resolve; });
+  const deferred = new Promise<typeof output>(resolve => { finish = resolve; });
+  const old = service.execute(actor, run.runId, id, packet, async () => { started(); return deferred; });
+  const oldRejected = assert.rejects(old, /lease lost/i);
+  await entered;
+  await client.db('research-fencing').collection('agency_research').updateOne({ _id: id } as never, { $set: { leaseUntil: new Date(0) } });
+  const replacement = await service.execute(actor, run.runId, id, packet, async () => output);
+  finish({ ...output, summary: 'This stale result must never replace the winning artifact.' });
+  await oldRejected;
+  assert.equal((await service.get(actor, id)).artifactHash, replacement.artifactHash);
+  await assert.rejects(service.review({ ...actor, canApprove: false }, id,
+    { artifactHash: replacement.artifactHash, accepted: true, notes: 'A review without permission.' }), /forbidden/i);
+  await service.review(actor, id, { artifactHash: replacement.artifactHash, accepted: false, notes: 'Needs stronger evidence for the recommendation.' });
+  await assert.rejects(service.review(actor, id, { artifactHash: replacement.artifactHash, accepted: true, notes: 'Attempt to reverse the recorded review.' }), /conflict/i);
+});
