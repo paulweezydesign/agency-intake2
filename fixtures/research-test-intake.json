@@ -1,0 +1,4 @@
+{
+  "projectId": "agency-website-research-test",
+  "brief": "Test client answers: build a five-page agency website with Home, Services, Work, About, and Contact pages. Budget is USD 18,000. Target launch date is 2026-12-15. Use WCAG 2.2 Level AA as the accessibility target. The client will supply brand assets and final copy. Use a modern TypeScript web stack, with the exact framework to be confirmed during technical planning. Confirm final content, hosting, analytics, privacy requirements, and acceptance owner before implementation."
+}

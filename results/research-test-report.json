@@ -1,0 +1,93 @@
+{
+  "assignmentId": "162941b81e792d3c7276ee22f6f2cda76d9cefd618431ea94d41ee09aeb5f28a",
+  "runId": "301de7b5-6a4e-42e0-8a57-91351edbb52d",
+  "status": "awaiting_qa",
+  "artifactHash": "9bf2f8161dbd8b13bb7d0e54456911d967b4edccbb18e0e9c921c281eb723ec5",
+  "citationsChecked": 8,
+  "artifact": {
+    "summary": "The client brief (sourceId: client-brief) defines a five-page agency website (Home, Services, Work, About, Contact), a budget of USD 18,000, a target launch date of 2026-12-15, WCAG 2.2 Level AA as the accessibility target, client-supplied brand assets and final copy, and a modern TypeScript web stack with the exact framework still to be confirmed. The brief itself lists final content, hosting, analytics, privacy requirements, and the acceptance owner as items to confirm before implementation. Supplementary W3C sources corroborate that WCAG 2.2 defines A, AA, and AAA conformance levels and that forms should be accessible via labels, instructions, validation, and error/success notifications (relevant to the Contact page). Several requirements remain unresolved and require client confirmation before implementation.",
+    "findings": [
+      {
+        "claim": "The client requires a five-page agency website with Home, Services, Work, About, and Contact pages.",
+        "citations": [
+          {
+            "sourceId": "client-brief",
+            "quote": "build a five-page agency website with Home, Services, Work, About, and Contact pages."
+          }
+        ]
+      },
+      {
+        "claim": "The project budget is USD 18,000 and the target launch date is 2026-12-15.",
+        "citations": [
+          {
+            "sourceId": "client-brief",
+            "quote": "Budget is USD 18,000. Target launch date is 2026-12-15."
+          }
+        ]
+      },
+      {
+        "claim": "The accessibility target is WCAG 2.2 Level AA.",
+        "citations": [
+          {
+            "sourceId": "client-brief",
+            "quote": "Use WCAG 2.2 Level AA as the accessibility target."
+          }
+        ]
+      },
+      {
+        "claim": "WCAG 2.2 defines three conformance levels (A, AA, AAA), confirming Level AA is a valid, testable target.",
+        "citations": [
+          {
+            "sourceId": "w3c-wcag22",
+            "quote": "Three levels of conformance are defined: A, AA, and AAA."
+          }
+        ]
+      },
+      {
+        "claim": "The client will supply brand assets and final copy.",
+        "citations": [
+          {
+            "sourceId": "client-brief",
+            "quote": "The client will supply brand assets and final copy."
+          }
+        ]
+      },
+      {
+        "claim": "The stack is a modern TypeScript web stack, but the exact framework is not yet chosen and must be confirmed during technical planning.",
+        "citations": [
+          {
+            "sourceId": "client-brief",
+            "quote": "Use a modern TypeScript web stack, with the exact framework to be confirmed during technical planning."
+          }
+        ]
+      },
+      {
+        "claim": "Final content, hosting, analytics, privacy requirements, and the acceptance owner must be confirmed before implementation begins.",
+        "citations": [
+          {
+            "sourceId": "client-brief",
+            "quote": "Confirm final content, hosting, analytics, privacy requirements, and acceptance owner before implementation."
+          }
+        ]
+      },
+      {
+        "claim": "For the Contact page, accessible form practices should follow W3C WAI guidance: labels, instructions, validation, and success/error notifications.",
+        "citations": [
+          {
+            "sourceId": "w3c-forms",
+            "quote": "Use the label element to identify each form control, provide instructions, validate input, and notify users about successful task completion and errors."
+          }
+        ]
+      }
+    ],
+    "limitations": [
+      "The exact TypeScript framework is unconfirmed; the brief states it will be confirmed during technical planning, so the technical stack remains unresolved.",
+      "Hosting is unconfirmed; no hosting provider or environment has been selected or approved in the supplied evidence.",
+      "Analytics tooling and privacy requirements (e.g., cookie consent, data handling, regulatory scope) are unconfirmed and require client input before implementation.",
+      "Final content and the acceptance owner are unconfirmed; the client has not yet supplied final copy, brand assets, or named an acceptance owner.",
+      "Client sign-off on the brief and on implementation has not been obtained; the task's status is queued and nothing has been approved or executed.",
+      "This research only validated the brief against the supplied sources; no client contact, web browsing, or acceptance-criteria fulfillment has occurred.",
+      "Budget confirmation beyond the stated USD 18,000 (e.g., payment schedule, scope of what the budget covers) is not addressed in the evidence."
+    ]
+  }
+}
